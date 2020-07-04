@@ -60,6 +60,7 @@ int servoKILL = 0;
 
 void loop()
 {
+    //7 
     bool currentState = digitalRead(ButtonPin);
 
     if(servoKILL >= Minangle && servoKILL <= Maxangle)
