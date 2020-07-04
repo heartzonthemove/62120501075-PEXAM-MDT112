@@ -3,6 +3,7 @@
 Servo myservo;                                              // change servo to my servo
 int ServoPin = 9;                                           // change servo pin to 9
 int anglestep = 30;                                         // set what 1 step push to be
+int angle = 90;                                             // initial angle  for servo
 int Minangle = 0;                                           // set minimum to 0 degrees
 int Maxangle = 180;                                         // set maximun to 180 degrees
 
@@ -56,25 +57,58 @@ void setup()
     tone(8, 600, 500);                                      // sound beep
 }
 
-int servoKILL = 0;
+int ButtonCount = 0;
 
 void loop()
 {
     //7 
     bool currentState = digitalRead(ButtonPin);
 
-    if(servoKILL >= Minangle && servoKILL <= Maxangle)
+    //8
+    if(lastState < currentState)
     {
-        if(lastState > currentState)                        // push down the buttton
+        switch (ButtonCount) 
         {
-            servoKILL = servoKILL + 30;
+        case 1:
+        myservo.write(30);                                       // change servo to 0 degree
+        break;
+        case 2:
+        myservo.write(60);                                      // change servo to 30 degree
+        break;
+        case 3:
+        myservo.write(90);                                      // change servo to 60 degree
+        break;
+        case 4:
+        myservo.write(120);                                      // change servo to 90 degree
+        break;
+        case 5:
+        myservo.write(150);                                     // change servo to 120 degree
+        break;
+        case 6:
+        myservo.write(180);                                     // change servo to 150 degree
+        break;
+        case 7:
+        myservo.write(150);                                     // change servo to 180 degree
+        break;
+        case 8:
+        myservo.write(120);                                     // change servo to 0 degree
+        break;
+        case 9:
+        myservo.write(90);                                     // change servo to 30 degree
+        break;
+        case 10:
+        myservo.write(60);                                      // change servo to 60 degree
+        break;
+        case 11:
+        myservo.write(30);                                      // change servo to 90 degree
+        break;
+        case 12:
+        myservo.write(0);                                      // change servo to 120 degree
+        ButtonCount = 0;
+        break;
         }
-
-        if(lastState < currentState)                        // let go off the button
-        {
-            myservo.write(servoKILL);
-        }
-        
-        lastState = currentState;
+        ButtonCount++;
     }
+
+    lastState = currentState;
 }
