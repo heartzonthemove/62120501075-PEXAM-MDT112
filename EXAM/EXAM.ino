@@ -36,9 +36,13 @@ void setup()
     myservo.write(0);                           // change servo to 0 degree
     Serial.println("Servo : 0 degrees");
     delay(800);
+
+    //5
+    sevenSegment.displayStr("0000"); 
+    delay(800);
+    sevenSegment.displayStr(""); 
 }
 
 void loop()
 {
-
 }
