@@ -21,6 +21,11 @@ void setup()
 
     tone(8, 600, 300);
     Serial.println("Hello MDT!!!");
+
+    myservo.write(0);                           // change servo to 0 degree
+    myservo.write(150);                         // change servo to 180 degree
+    Serial.println("Servo : 150 degrees");
+    delay(800);
 }
 
 void loop()
