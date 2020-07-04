@@ -19,11 +19,15 @@ void setup()
     sevenSegment.init();
     sevenSegment.set(7);                        // BRIGHT 0-7;
 
+    //1
     tone(8, 600, 300);
+
+    //2
     Serial.println("Hello MDT!!!");
 
+    //3
     myservo.write(0);                           // change servo to 0 degree
-    myservo.write(150);                         // change servo to 180 degree
+    myservo.write(150);                         // change servo to 150 degree
     Serial.println("Servo : 150 degrees");
     delay(800);
 }
