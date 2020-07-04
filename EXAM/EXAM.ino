@@ -55,9 +55,11 @@ void setup()
     //6
     delay(600);                                                     // wait 0.6 sec
     tone(8, 600, 500);                                              // sound beep
+
+    sevenSegment.displayStr("   0");                                // show in 7segment screen
 }
 
-int ButtonCount = 0;
+int ButtonCount = 1;
 
 void loop()
 {
@@ -67,56 +69,67 @@ void loop()
     if(lastState < currentState)
     {   
         //9
-        sevenSegment.displayStr("   0");                               // show in 7segment screen
         switch (ButtonCount) 
         {
         case 1:
         myservo.write(30);                                          // change servo to 30 degree
         sevenSegment.displayNum(30);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 2:
         myservo.write(60);                                          // change servo to 60 degree
         sevenSegment.displayNum(60);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 3:
         myservo.write(90);                                          // change servo to 90 degree
         sevenSegment.displayNum(90);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 4:
         myservo.write(120);                                         // change servo to 120 degree
         sevenSegment.displayNum(120);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 5:
         myservo.write(150);                                         // change servo to 150 degree
         sevenSegment.displayNum(150);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 6:
         myservo.write(180);                                         // change servo to 180 degree
         sevenSegment.displayNum(180);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 7:
         myservo.write(150);                                         // change servo to 150 degree
         sevenSegment.displayNum(150);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 8:
         myservo.write(120);                                         // change servo to 120 degree
         sevenSegment.displayNum(120);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 9:
         myservo.write(90);                                          // change servo to 90 degree
         sevenSegment.displayNum(90);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 10:
         myservo.write(60);                                          // change servo to 60 degree
         sevenSegment.displayNum(60);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 11:
         myservo.write(30);                                          // change servo to 30 degree
         sevenSegment.displayNum(30);
+        tone(8, 900, 800);                                          // sound beep
         break;
         case 12:
         myservo.write(0);                                           // change servo to 0 degree
-        sevenSegment.displayStr("   0");                               // show in 7segment screen
+        sevenSegment.displayStr("   0");                            // show in 7segment screen
+        tone(8, 900, 800);                                          // sound beep
         ButtonCount = 0;
         break;
         }
