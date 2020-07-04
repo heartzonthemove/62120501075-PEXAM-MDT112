@@ -40,7 +40,12 @@ void setup()
     //5
     sevenSegment.displayStr("0000"); 
     delay(800);
-    sevenSegment.displayStr(""); 
+    sevenSegment.displayStr("");
+    
+    //6
+    delay(600);
+    tone(8, 600, 500);
+    
 }
 
 void loop()
