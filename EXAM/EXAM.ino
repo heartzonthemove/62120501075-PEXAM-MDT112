@@ -1,6 +1,26 @@
+//servo
+#include <Servo.h>
+Servo myservo;                                  // change servo to my servo
+int ServoPin = 9;                               // change servo pin to 9
+
+//7segment
+#include "TM1637.h"
+const int DIO = 16;                             // setup 7-segment to A2
+const int CLK = 17;                             // setup 7-segment to A3
+TM1637 sevenSegment(CLK, DIO);                  // 7-segment
+
 void setup()
 {
+    //servo
+    Serial.begin(9600);                         // show in the monitor screen
+    myservo.attach(ServoPin);                   // choose which pin to go to
+
+    //7segment
+    sevenSegment.init();
+    sevenSegment.set(7);                        // BRIGHT 0-7;
+
     tone(8, 600, 300);
+    Serial.println("Hello MDT!!!");
 }
 
 void loop()
