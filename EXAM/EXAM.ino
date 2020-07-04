@@ -30,6 +30,12 @@ void setup()
     myservo.write(150);                         // change servo to 150 degree
     Serial.println("Servo : 150 degrees");
     delay(800);
+
+    //4
+    myservo.write(150);                         // change servo to 150 degree
+    myservo.write(0);                           // change servo to 0 degree
+    Serial.println("Servo : 0 degrees");
+    delay(800);
 }
 
 void loop()
